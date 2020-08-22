@@ -1,0 +1,438 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar1.scss';
+// @import './btn.scss';
+@import './box-distance.scss';
+body {
+  overflow: hidden;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-size: 14px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body, th, ul, ol, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  border: none;
+  outline: none;
+}
+
+// ::-webkit-scrollbar-track-piece {
+//   background-color: inherit;
+// }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 28px;
+  background-color: #C2C2C2;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #A0A0A0;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+
+  & > div {
+    height: 100%;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+a, a:focus, a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.pd-0 {
+  padding: 0 !important;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    content: ' ';
+  }
+}
+
+aside {
+  display: block;
+  margin-bottom: 20px;
+  padding: 8px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+  color: #2C3E50;
+  border-radius: 2px;
+  background: #EEF1F6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    cursor: pointer;
+    color: #337AB7;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-content {
+  position: relative;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 5px 5px 0;
+  background: #F1F4F5;
+
+  .app-content-wrapper {
+    flex: 1;
+    box-sizing: border-box;
+    // height: 100%;
+    padding: 10px 10px 0;
+    background: #FFFFFF;
+
+    & > .el-form {
+      padding-top: 4px;
+    }
+  }
+}
+.app-content--quote {
+  padding: 0;
+  .comp-quote {
+    border-bottom: none;
+    box-shadow: 0px 2px 5px rgba(201, 217, 248, .8);
+  }
+  .app-content-wrapper {
+    margin: 5px 5px 0;
+  }
+}
+// .app-inner-wrap {
+//   position: relative;
+//   height: 100%;
+//   padding: 15px;
+//   background: #FFFFFF;
+// }
+
+.common-page {
+  display: block;
+  padding: 10px 10px 0;
+  background: #F1F4F5;
+}
+
+.components-container {
+  position: relative;
+  margin: 30px 50px;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.abs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// .sub-navbar {
+//   position: relative;
+//   width: 100%;
+//   height: 50px;
+//   padding-right: 20px;
+//   line-height: 50px;
+//   transition: 600ms ease position;
+//   text-align: right;
+//   background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+//   .subtitle {
+//     font-size: 20px;
+//     color: #FFFFFF;
+//   }
+
+//   &.draft {
+//     background: #D0D0D0;
+//   }
+
+//   &.deleted {
+//     background: #D0D0D0;
+//   }
+// }
+
+.link-type, .link-type:focus {
+  cursor: pointer;
+  color: #409EFF;
+}
+
+// .filter-container {
+//   padding-bottom: 10px;
+
+//   .filter-item {
+//     display: inline-block;
+//     margin-bottom: 10px;
+//     vertical-align: middle;
+//   }
+// }
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+// add by illa
+.hidden {
+  display: none!important;
+}
+
+.flex {
+  display: flex;
+}
+.split-line {
+  margin: 0 5px;
+  color: #C0C4CC;
+}
+.full-w {
+  width: 100%;
+}
+// .el-form-flex {
+//   display: flex;
+//   flex-wrap: wrap;
+//   .el-form-item {
+//     width: 100%;
+//   }
+//   .el-form-item-1 {
+//     width: 100% !important;
+//   }
+//   .el-form-item-2 {
+//     width: 50% !important;
+//   }
+//   .el-form-item-3 {
+//     width: 33.3333% !important;
+//   }
+//   .el-form-item-4 {
+//     width: 25% !important;
+//   }
+// }
+
+.default-bg {
+  background: #F1F4F5;
+}
+
+.el-input.text-right {
+  input {
+    text-align: right;
+  }
+}
+.pd-0 {
+  padding: 0 !important;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.white-bg {
+  background: #FFFFFF!important;
+}
+// .g-blue {
+//   color: #1890FF!important;
+// }
+.btn-group {
+  margin: 0 -10px;
+  padding: 10px;
+  border-top: 1px solid #F1F4F5;
+  border-bottom: 1px solid #F1F4F5;
+  &:empty {
+    padding: 0;
+    border-bottom: none;
+  }
+  &.sticky {
+    margin-top: -10px;
+    border-top: none;
+  }
+}
+.modal-box {
+  position: absolute;
+  z-index: 100000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.el-form.search-form {
+  .el-form-item {
+    margin-bottom: 12px;
+  }
+}
+
+// .g-sub-title {
+//   height: 40px;
+//   padding: 0 20px;
+//   line-height: 40px;
+//   .text {
+//     display: inline-block;
+//     padding-left: 10px;
+//     line-height: 1;
+//     border-left: 3px solid #5595FF;
+//   }
+// }
+// .g-sub-title.bd-bottom {
+//   border-bottom: 1px solid #F1F4F5;
+// }
+.panel-header {
+  box-sizing: border-box;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  line-height: 40px;
+  border-bottom: 1px solid #F1F4F5;
+  .text {
+    display: inline-block;
+    padding-left: 10px;
+    line-height: 1.4;
+    border-left: 3px solid #5595FF;
+  }
+}
+// 去掉顶部导航与左侧菜单栏
+.fullscreen {
+  .navbar, .sidebar-container, .tags-view {
+    display: none !important;
+  }
+  .app-main {
+    top: 0 !important;
+  }
+}
+
+.el-table-simple {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  thead {
+    color: #5D6476;
+    th {
+      font-weight: normal;
+      text-align: center;
+      border-top: 1px solid #E3E8EE;
+      background: #EEF1F6;
+    }
+  }
+  tbody tr {
+    transition: background .2s;
+    &:hover {
+      background: #EAF1FB;
+    }
+  }
+  td, th {
+    padding: 6px 10px;
+    line-height: 23px;
+    border-right: 1px solid #E3E8EE;
+    border-bottom: 1px solid #E3E8EE;
+    &:first-child {
+      border-left: 1px solid #E3E8EE;
+    }
+  }
+}
+
+

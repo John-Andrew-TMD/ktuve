@@ -1,0 +1,122 @@
+{
+  "name": "king-tech-front-frame",
+  "version": "1.0.0",
+  "description": "",
+  "author": "tangyong",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:stage": "vue-cli-service build --mode staging",
+    "lint": "eslint --ext .js,.vue src",
+    "test:unit": "jest --clearCache && vue-cli-service test:unit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.0.1",
+    "core-js": "^3.4.4",
+    "dayjs": "^1.8.18",
+    "decimal.js": "^10.2.0",
+    "default-passive-events": "^1.0.10",
+    "echarts": "4.2.1",
+    "element-ui": "^2.13.0",
+    "file-saver": "2.0.1",
+    "fuse.js": "^5.1.0",
+    "js-md5": "^0.7.3",
+    "localforage": "^1.7.3",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "path-to-regexp": "^6.1.0",
+    "screenfull": "4.2.0",
+    "sortablejs": "^1.10.2",
+    "tinymce": "^5.1.5",
+    "vue": "^2.6.10",
+    "vue-count-to": "1.0.13",
+    "vue-router": "3.0.2",
+    "vue-splitpane": "1.0.4",
+    "vuex": "3.1.0",
+    "xlsx": "^0.16.1",
+    "xlsx-style": "^0.8.13"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-router": "^4.1.0",
+    "@vue/cli-plugin-unit-jest": "^4.1.0",
+    "@vue/cli-plugin-vuex": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "compression-webpack-plugin": "^3.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "speed-measure-webpack-plugin": "^1.3.1",
+    "svg-sprite-loader": "4.1.3",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-parallel-uglify-plugin": "^1.1.2"
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)"
+        ],
+        "env": {
+          "mocha": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 0.1%",
+    "last 2 versions"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest",
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
+    "coverageDirectory": "/unitReport"
+  }
+}

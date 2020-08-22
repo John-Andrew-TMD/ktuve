@@ -1,0 +1,22 @@
+export default {
+  "factoringDirContract": "factoringDirContract",
+  "factoringDirCommissionContract": "factoringDirCommissionContract",
+  "buyContract": "buyContract",
+  "commissionBuyContract": "commissionBuyContract",
+  "leasebackContract": "leasebackContract",
+  "transferYesContract": "transferYesContract",
+  "transferNoContract": "transferNoContract",
+  "guarantyUnitContract": "guarantyUnitContract",
+  "guarantyPersonContract": "guarantyPersonContract",
+  "guarantyUnitTransferContract": "guarantyUnitTransferContract",
+  "guarantyPersonTransferContract": "guarantyPersonTransferContract",
+  "mortgageUnitContract": "mortgageUnitContract",
+  "mortgagePersonContract": "mortgagePersonContract",
+  "pledgeUnitContract": "pledgeUnitContract",
+  "pledgePersonContract": "pledgePersonContract",
+  "pledgePlainUnitContract": "pledgePlainUnitContract",
+  "pledgePlainPersonContract": "pledgePlainPersonContract",
+  "electricityContract": "electricityContract",
+  "economiContract": "economiContract",
+  "otherContract": "otherContract"
+}
